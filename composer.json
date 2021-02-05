@@ -19,5 +19,12 @@
    "require-dev": {
       "phpunit/phpunit": "~5.0"
    },
-   "license": "MIT"
+   "license": "MIT",
+   "extra": {
+      "laravel": {
+         "providers": [
+            "CCTools\\Service\\RsaUtilFacadeServiceProvider"
+         ]
+      }
+   }
 }
