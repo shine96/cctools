@@ -3,32 +3,32 @@
 namespace CCTools\Rsa;
 
 
-final class RsaUtil
+class RsaUtil
 {
-    private static $pubKeyRes = null;
-    private static $priKeyRes = null;
-    private static $config = array(
+    public $pubKeyRes = null;
+    public $priKeyRes = null;
+    public $config = array(
         'digest_alg' => 'sha256',
         'private_key_bits' => 2048,
         'private_key_type' => OPENSSL_KEYTYPE_RSA,
     );
-    private static $file_path;
+    public $file_path;
 
     public function __construct()
     {
         if (!extension_loaded('openssl')){
-            self::_error('请先开启OpenSSL扩展');
+            $this->_error('请先开启OpenSSL扩展');
         }
-        self::$file_path = dirname($_SERVER["DOCUMENT_ROOT"]).DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR;
-        if (file_exists(self::$file_path.'cctools.pem') && file_exists(self::$file_path.'cctools.key')){
-            self::$pubKeyRes = openssl_pkey_get_public(file_get_contents(self::$file_path.'cctools.key'));
-            self::$priKeyRes = openssl_pkey_get_private(file_get_contents(self::$file_path.'cctools.pem'));
+        $this->file_path = dirname($_SERVER["DOCUMENT_ROOT"]).DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR;
+        if (file_exists($this->file_path.'cctools.pem') && file_exists($this->file_path.'cctools.key')){
+            $this->pubKeyRes = openssl_pkey_get_public(file_get_contents($this->file_path.'cctools.key'));
+            $this->priKeyRes = openssl_pkey_get_private(file_get_contents($this->file_path.'cctools.pem'));
         }else{
             self::init();
         }
     }
 
-    public static function init()
+    public function init()
     {
         try {
             $res = openssl_pkey_new(self::$config);
@@ -44,77 +44,77 @@ final class RsaUtil
                 throw new \Exception('密钥生成失败');
             }
         }catch (\Exception $exception){
-            self::_error($exception->getMessage());
+            $this->_error($exception->getMessage());
         }
     }
 
-    public static function _error($msg)
+    public function _error($msg)
     {
         throw new \Exception($msg ?? null);
     }
 
-    public static function PubKeyEncrypt($data)
+    public function PubKeyEncrypt($data)
     {
         try {
             new self();
             if ((string)$data){
                 $encrypt = null;
-                openssl_public_encrypt($data,$encrypt,self::$pubKeyRes);
+                openssl_public_encrypt($data,$encrypt,$this->pubKeyRes);
                 $encryptData = base64_encode($encrypt);
                 return $encryptData ?? null;
             }
-            self::_error('无加密数据');
+            $this->_error('无加密数据');
         }catch (\Exception $exception){
-            self::_error($exception->getMessage());
+            $this->_error($exception->getMessage());
         }
     }
 
 
-    public static function PriKeyDecrypt($data)
+    public function PriKeyDecrypt($data)
     {
         try {
             new self();
             if ($data){
                 $decrypt = null;
-                openssl_private_decrypt(base64_decode($data),$decrypt,self::$priKeyRes);
+                openssl_private_decrypt(base64_decode($data),$decrypt,$this->priKeyRes);
                 return $decrypt;
             }
-            self::_error('无加密数据');
+            $this->_error('无加密数据');
         }catch (\Exception $exception){
-            self::_error($exception->getMessage());
+            $this->_error($exception->getMessage());
         }
     }
 
 
 
-    public static function PriKeyEncrypt($data)
+    public function PriKeyEncrypt($data)
     {
         try {
             new self();
             if ($data){
                 $encrypt = null;
-                openssl_private_encrypt($data,$encrypt,self::$priKeyRes);
+                openssl_private_encrypt($data,$encrypt,$this->priKeyRes);
                 return base64_encode($encrypt);
             }
-            self::_error('无加密数据');
+            $this->_error('无加密数据');
         }catch (\Exception $exception){
-            self::_error($exception->getMessage());
+            $this->_error($exception->getMessage());
         }
     }
 
 
-    public static function PubKeyDecrypt($data)
+    public function PubKeyDecrypt($data)
     {
         try {
             new self();
             if ($data){
                 $decrypt = null;
-                openssl_public_decrypt(base64_decode($data),$decrypt,self::$pubKeyRes);
+                openssl_public_decrypt(base64_decode($data),$decrypt,$this->pubKeyRes);
                 return $decrypt;
             }
-            self::_error('无加密数据');
+            $this->_error('无加密数据');
         }catch (\Exception $exception){
-            self::_error($exception->getMessage());
+            $this->_error($exception->getMessage());
         }
     }
 }
