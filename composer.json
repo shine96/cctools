@@ -1,0 +1,23 @@
+{
+   "name": "mimic/cctools",
+   "description": "基于Laravel的开源工具库",
+   "authors": [
+      {
+         "name": "shine",
+         "email": "10670374@qq.com"
+      }
+   ],
+   "autoload": {
+      "psr-4": {
+         "CCTools\\": "src/"
+      }
+   },
+   "require": {
+      "php": "7.2|8.0",
+      "illuminate/support": "5.*|6.*|7.*|8.*"
+   },
+   "required-dev": {
+      "phpunit/phpunit": "~5.0"
+   },
+   "license": "MIT"
+}
