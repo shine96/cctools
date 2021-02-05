@@ -22,9 +22,9 @@
    "license": "MIT",
    "extra": {
       "laravel": {
-         "providers":[
-            "CCTools\\Service\\RsaUtilFacadeServiceProvide",
-         ],
+         "providers": {
+               "CCTools\\Service\\RsaUtilFacadeServiceProvide"
+         },
          "aliases": {
             "RsaUtil": "CCTools\\Facade\\RsaUtilFacade"
          }
