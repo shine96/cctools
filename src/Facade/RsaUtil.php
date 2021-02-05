@@ -1,6 +1,6 @@
 <?php
 
-namespace CCTools\Rsa;
+namespace CCTools\Facade;
 
 
 class RsaUtil

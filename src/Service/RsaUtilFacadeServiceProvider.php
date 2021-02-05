@@ -4,7 +4,7 @@
 namespace CCTools\Service;
 
 
-use CCTools\Rsa\RsaUtil;
+use CCTools\Facade\RsaUtil;
 use Illuminate\Support\ServiceProvider;
 
 class RsaUtilFacadeServiceProvider extends ServiceProvider
