@@ -23,7 +23,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response($code == 200 ? $code : $code)->json($result);
+            return response()->json($result,$code == 200 ? $code : $code);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
