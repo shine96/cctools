@@ -28,7 +28,7 @@ class RsaUtilFacade extends Facade
             $this->_error('请先开启OpenSSL扩展');
         }
         self::$file_path = dirname($_SERVER["DOCUMENT_ROOT"]).DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR;
-        if (file_exists($this->file_path.'cctools.pem') && file_exists(self::$file_path.'cctools.key')){
+        if (file_exists(self::$file_path.'cctools.pem') && file_exists(self::$file_path.'cctools.key')){
             $this->pubKeyRes = openssl_pkey_get_public(file_get_contents(self::$file_path.'cctools.key'));
             $this->priKeyRes = openssl_pkey_get_private(file_get_contents(self::$file_path.'cctools.pem'));
         }else{
