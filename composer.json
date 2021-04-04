@@ -23,7 +23,7 @@
    "extra": {
       "laravel": {
          "providers": [
-            "CCTools\\Service\\RsaUtilFacadeServiceProvider"
+            "CCTools\\Providers\\RsaUtilProvider"
          ],
          "aliases": {
             "RsaUtil": "RsaUtil"
