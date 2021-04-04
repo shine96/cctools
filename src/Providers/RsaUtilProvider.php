@@ -3,7 +3,6 @@
 
 namespace CCTools\Providers;
 
-
 use CCTools\Classes\Rsa;
 use Illuminate\Support\ServiceProvider;
 
