@@ -16,7 +16,7 @@ class RsaUtilProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //自动注册
         $this->app->bind('RsaUtil',function (){
             return new Rsa();
         });
