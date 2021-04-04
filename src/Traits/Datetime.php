@@ -4,6 +4,7 @@
 namespace CCTools\Traits;
 
 use DateTimeInterface;
+
 class Datetime
 {
     protected function serializeDate(DateTimeInterface $date)

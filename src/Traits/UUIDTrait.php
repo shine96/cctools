@@ -4,7 +4,7 @@
 namespace CCTools\Traits;
 
 
-use Illuminate\Support\Str;
+use Ramsey\Uuid\Uuid;
 
 trait UUIDTrait
 {
@@ -12,7 +12,7 @@ trait UUIDTrait
     {
         static::creating(function ($model){
             if (!$model->getkey()){
-                $model->{$model->getKeyName()} = (string)Str::uuid();
+                $model->{$model->getKeyName()} = Uuid::uuid1()->toString();
             }
         });
     }
