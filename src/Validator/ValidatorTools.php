@@ -10,11 +10,11 @@ class ValidatorTools
 {
     protected $rules;
     protected $messages;
-    public $scenes;
-    public $oldRules;
+    protected $scenes;
+    private $oldRules;
 
 
-    protected $validator;
+    private $validator;
 
     public function __construct()
     {
