@@ -4,7 +4,7 @@
 namespace CCTools\Providers;
 
 
-use CCTools\Classes\RsaUtil;
+use CCTools\Classes\Rsa;
 use Illuminate\Support\ServiceProvider;
 
 class RsaUtilProvider extends ServiceProvider
@@ -19,7 +19,7 @@ class RsaUtilProvider extends ServiceProvider
     {
         //
         $this->app->bind('RsaUtil',function (){
-            return new RsaUtil();
+            return new Rsa();
         });
     }
 

@@ -4,7 +4,7 @@
 namespace CCTools\Classes;
 
 
-class RsaUtil
+class Rsa
 {
     public $pubKeyRes = null;
     public $priKeyRes = null;
