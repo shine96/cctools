@@ -3,7 +3,7 @@
 
 namespace CCTools\Traits;
 
-
+use CCTools\Facade\SnowFlake;
 
 trait SnowFlakeId
 {
@@ -11,7 +11,7 @@ trait SnowFlakeId
     {
         static::creating(function ($model){
             if (!$model->getkey()){
-                $model->{$model->getKeyName()} = Uuid::uuid1()->toString();
+                $model->{$model->getKeyName()} = (string)SnowFlake::id();
             }
         });
     }
