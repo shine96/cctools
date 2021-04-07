@@ -26,3 +26,8 @@ use SnowFlakeId //使用雪花算法唯一ID当作主键
 ### ValidatorTools 验证器工具
 
 - 多场景验证器类，参考ThinkPHP验证器
+
+### StrUtil 工具类
+```angular2html
+StrUtil::RandStr($length)  //指定长度随机字符串，用于文件名，随机token等
+```
