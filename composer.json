@@ -30,7 +30,7 @@
          ],
          "aliases": {
             "RsaUtil": "RsaUtil",
-            "SnowFlake": "SnowFlake",
+            "SnowFlake": "SnowFlake"
          }
       }
    }
