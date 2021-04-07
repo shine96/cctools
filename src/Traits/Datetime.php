@@ -5,7 +5,7 @@ namespace CCTools\Traits;
 
 use DateTimeInterface;
 
-class Datetime
+trait Datetime
 {
     protected function serializeDate(DateTimeInterface $date)
     {

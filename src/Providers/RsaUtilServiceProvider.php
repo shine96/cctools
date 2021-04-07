@@ -6,7 +6,7 @@ namespace CCTools\Providers;
 use CCTools\Classes\Rsa;
 use Illuminate\Support\ServiceProvider;
 
-class RsaUtilProvider extends ServiceProvider
+class RsaUtilServiceProvider extends ServiceProvider
 {
 
     /**
