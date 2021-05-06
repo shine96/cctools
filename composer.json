@@ -26,11 +26,13 @@
       "laravel": {
          "providers": [
             "CCTools\\Providers\\RsaUtilServiceProvider",
-            "CCTools\\Providers\\SnowFlakeServiceProvider"
+            "CCTools\\Providers\\SnowFlakeServiceProvider",
+            "CCTools\\Providers\\StrUtilServiceProvider"
          ],
          "aliases": {
             "RsaUtil": "RsaUtil",
-            "SnowFlake": "SnowFlake"
+            "SnowFlake": "SnowFlake",
+            "StrUtil": "StrUtil"
          }
       }
    }
