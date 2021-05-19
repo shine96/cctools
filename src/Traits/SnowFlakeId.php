@@ -3,15 +3,17 @@
 
 namespace CCTools\Traits;
 
-use CCTools\Facade\SnowFlake;
 
 trait SnowFlakeId
 {
     protected static function bootSnowFlakeId()
     {
-        static::creating(function ($model){
-            if (!$model->getkey()){
-                $model->{$model->getKeyName()} = (string)SnowFlake::id();
+        static::saving(function ($model) {
+            if (is_null($model->getKey())) {
+                $model->setIncrementing(false);
+                $keyName    = $model->getKeyName();
+                $id         = (string)app(\Kra8\Snowflake\Snowflake::class)->next();
+                $model->setAttribute($keyName, $id);
             }
         });
     }
