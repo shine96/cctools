@@ -4,8 +4,8 @@
 namespace CCTools\Providers;
 
 
-use Godruoyi\Snowflake\Snowflake;
 use Illuminate\Support\ServiceProvider;
+use Kra8\Snowflake\Snowflake;
 
 class SnowFlakeServiceProvider extends ServiceProvider
 {
