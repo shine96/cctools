@@ -20,7 +20,7 @@ ResponseLayout::apply(boolean,data,message);
 ```angular2html
 use Datetime;  //替换Laravel7以上默认数据库时间为北京时间格式
 use UUIDTrait; //使用UUID当作主键
-use SnowFlakeId //使用雪花算法唯一ID当作主键
+use HasSnowFlakeId //使用雪花算法唯一ID当作主键
 ```
 
 ### ValidatorTools 验证器工具
