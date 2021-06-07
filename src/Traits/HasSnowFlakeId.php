@@ -4,9 +4,9 @@
 namespace CCTools\Traits;
 
 
-trait SnowFlakeId
+trait HasSnowFlakeId
 {
-    protected static function bootSnowFlakeId()
+    protected static function bootHasSnowFlakeId()
     {
         static::saving(function ($model) {
             if (is_null($model->getKey())) {
