@@ -8,12 +8,12 @@ class Rsa
 {
     public $pubKeyRes = null;
     public $priKeyRes = null;
-    public static $config = array(
+    public $config = array(
         'digest_alg' => 'sha256',
         'private_key_bits' => 2048,
         'private_key_type' => OPENSSL_KEYTYPE_RSA,
     );
-    public static $file_path;
+    public $file_path;
 
 
     public function __construct()
@@ -21,12 +21,12 @@ class Rsa
         if (!extension_loaded('openssl')){
             $this->_error('请先开启OpenSSL扩展');
         }
-        self::$file_path = base_path().'/';
-        if (file_exists(self::$file_path.'cctools.pem') && file_exists(self::$file_path.'cctools.key')){
-            $this->pubKeyRes = openssl_pkey_get_public(file_get_contents(self::$file_path.'cctools.key'));
-            $this->priKeyRes = openssl_pkey_get_private(file_get_contents(self::$file_path.'cctools.pem'));
+        $this->file_path = dirname($_SERVER["DOCUMENT_ROOT"]).DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR;
+        if (file_exists($this->file_path.'cctools.pem') && file_exists($this->file_path.'cctools.key')){
+            $this->pubKeyRes = openssl_pkey_get_public(file_get_contents($this->file_path.'cctools.key'));
+            $this->priKeyRes = openssl_pkey_get_private(file_get_contents($this->file_path.'cctools.pem'));
         }else{
-            self::init();
+           $this->init();
         }
     }
 
