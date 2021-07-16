@@ -1,6 +1,6 @@
 <?php
 
-namespace CCTools\Facade;
+namespace CCTools\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
