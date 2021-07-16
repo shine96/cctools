@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Validator;
 
 class ValidatorTools
 {
-    protected $rules;
-    protected $messages;
-    protected $scenes;
+    private $rules;
+    private $messages;
+    private $scenes;
     private $oldRules;
 
 
