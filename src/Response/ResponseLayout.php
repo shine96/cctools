@@ -23,7 +23,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->json($result,$code == 200 ? $code : $code);
+            return response()->header('X-Author','mimic/cctools')->json($result,$code == 200 ? $code : $code);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
@@ -57,7 +57,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->json($result);
+            return response()->header('X-Author','mimic/cctools')->json($result);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
