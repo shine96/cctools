@@ -14,7 +14,7 @@ trait ApiResponse
         $msg ? $result['msg'] = $msg : $result['msg'] = 'ok';
         $result['code'] = $code;
         $result['data'] = $data;
-        return response()->json($result,200);
+        return response()->header('X-Author','mimic/cctools')->json($result,200);
     }
 
 
@@ -23,6 +23,6 @@ trait ApiResponse
         $result = [];
         $msg ? $result['msg'] = $msg : $result['msg'] = 'fail';
         $result['code'] = $code;
-        return response()->json($result,200);
+        return response()->header('X-Author','mimic/cctools')->json($result,200);
     }
 }
