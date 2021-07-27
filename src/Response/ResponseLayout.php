@@ -5,6 +5,9 @@ namespace CCTools\Response;
 
 final class ResponseLayout
 {
+    protected static $headers = [
+        'X-Author' => 'cctools',
+    ];
 
     public static function apply($bool = true,$msg = null,$data = array(),$code = 200)
     {
@@ -23,7 +26,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->header('X-Author','mimic/cctools')->json($result,$code == 200 ? $code : $code);
+            return response()->json($result,($code == 200 ? $code : $code),self::headers);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
@@ -57,7 +60,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->header('X-Author','mimic/cctools')->json($result);
+            return response()->json($result,200,self::headers);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
