@@ -26,7 +26,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->json($result,($code == 200 ? $code : $code),self::headers);
+            return response()->json($result,($code == 200 ? $code : $code),self::$headers);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
@@ -60,7 +60,7 @@ final class ResponseLayout
                     $result['data'] = $data;
                 }
             }
-            return response()->json($result,200,self::headers);
+            return response()->json($result,200,self::$headers);
         }catch (\Exception $exception){
             throw new \Exception($exception->getMessage());
         }
