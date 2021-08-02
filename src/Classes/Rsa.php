@@ -33,12 +33,12 @@ class Rsa
     public function init()
     {
         try {
-            $res = openssl_pkey_new(self::$config);
+            $res = openssl_pkey_new($this->config);
             openssl_pkey_export($res,$private_key);
             $public_key_default = openssl_pkey_get_details($res);
             $public_key = isset($public_key_default['key']) ? $public_key_default['key'] : null;
-            file_put_contents(self::$file_path.'cctools.pem',$private_key);
-            file_put_contents(self::$file_path.'cctools.key',$public_key);
+            file_put_contents($this->file_path.'cctools.pem',$private_key);
+            file_put_contents($this->file_path.'cctools.key',$public_key);
             $data = 'verify';
             openssl_sign($data,$signtrue,$private_key,OPENSSL_ALGO_SHA256);
             $result = openssl_verify($data,$signtrue,$public_key,OPENSSL_ALGO_SHA256);
