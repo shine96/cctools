@@ -26,7 +26,11 @@ class Rsa
             $this->pubKeyRes = openssl_pkey_get_public(file_get_contents($this->file_path.'cctools.key'));
             $this->priKeyRes = openssl_pkey_get_private(file_get_contents($this->file_path.'cctools.pem'));
         }else{
-           $this->init();
+            if (!file_exists($this->file_path.'cctools.pem') || !file_exists($this->file_path.'cctools.key')){
+                $this->_error('缺少公钥或者私钥');
+            }else{
+                $this->init();
+            }
         }
     }
 
