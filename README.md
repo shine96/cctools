@@ -29,5 +29,6 @@ use HasSnowFlakeId //使用雪花算法唯一ID当作主键
 
 ### StrUtil 工具类
 ```angular2html
-StrUtil::RandStr($length)  //指定长度随机字符串，用于文件名，随机token等
+StrUtil::randStr($length)  //指定长度随机字符串，用于文件名，随机token等
+StrUtil::desensitize($string,$start,$length,$re)  //脱敏工具类
 ```
