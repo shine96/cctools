@@ -3,9 +3,9 @@
 
 namespace CCTools\Command;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\GeneratorCommand;
 
-class ServicesCommand extends Command
+class ServicesCommand extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
