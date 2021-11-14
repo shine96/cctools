@@ -26,7 +26,8 @@
       "laravel": {
          "providers": [
             "CCTools\\Providers\\RsaUtilServiceProvider",
-            "CCTools\\Providers\\StrUtilServiceProvider"
+            "CCTools\\Providers\\StrUtilServiceProvider",
+            "CCTools\\Providers\\MakeServiceProvider"
          ],
          "aliases": {
             "RsaUtil": "RsaUtil",
