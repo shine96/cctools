@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\Facade;
 
 
 /**
- * @method static \CCTools\Classes\Rsa PubKeyEncrypt(string $data)
- * @method static \CCTools\Classes\Rsa PriKeyDecrypt(string $data)
- * @method static \CCTools\Classes\Rsa PriKeyEncrypt(string $data)
- * @method static \CCTools\Classes\Rsa PubKeyDecrypt(string $data)
+ * @method static \CCTools\Classes\RsaUtil PubKeyEncrypt(string $data)
+ * @method static \CCTools\Classes\RsaUtil PriKeyDecrypt(string $data)
+ * @method static \CCTools\Classes\RsaUtil PriKeyEncrypt(string $data)
+ * @method static \CCTools\Classes\RsaUtil PubKeyDecrypt(string $data)
  */
 class RsaUtil extends Facade
 {

@@ -3,7 +3,7 @@
 
 namespace CCTools\Providers;
 
-use CCTools\Classes\Rsa;
+use CCTools\Facades\RsaUtil;
 use Illuminate\Support\ServiceProvider;
 
 class RsaUtilServiceProvider extends ServiceProvider
@@ -17,8 +17,8 @@ class RsaUtilServiceProvider extends ServiceProvider
     public function register()
     {
         //自动注册
-        $this->app->singleton('RsaUtil',function (){
-            return new Rsa();
+        $this->app->singleton(RsaUtil::class,function (){
+            return new \CCTools\Classes\RsaUtil();
         });
     }
 

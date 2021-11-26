@@ -1,10 +1,8 @@
 <?php
-
-
 namespace CCTools\Classes;
 
 
-class Rsa
+class RsaUtil
 {
     public $pubKeyRes = null;
     public $priKeyRes = null;
