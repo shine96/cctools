@@ -19,7 +19,7 @@ class RsaUtil
         if (!extension_loaded('openssl')){
             $this->_error('请先开启OpenSSL扩展');
         }
-        $this->file_path = base_path().DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR;
+        $this->file_path = base_path().DIRECTORY_SEPARATOR.;
         if (file_exists($this->file_path.'cctools.pem') && file_exists($this->file_path.'cctools.key')){
             $this->pubKeyRes = openssl_pkey_get_public(file_get_contents($this->file_path.'cctools.key'));
             $this->priKeyRes = openssl_pkey_get_private(file_get_contents($this->file_path.'cctools.pem'));
