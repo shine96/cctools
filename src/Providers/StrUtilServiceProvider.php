@@ -12,7 +12,7 @@ class StrUtilServiceProvider extends ServiceProvider
     public function register()
     {
         //绑定IoC容器
-        $this->app->bind('StrUtil',function (){
+        $this->app->singleton('StrUtil',function (){
             return new StrUtil();
         });
     }
