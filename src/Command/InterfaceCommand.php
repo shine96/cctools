@@ -18,14 +18,14 @@ class InterfaceCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new service class';
+    protected $description = 'Create a new interface';
 
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'Service';
+    protected $type = 'Interface';
 
     /**
      * Get the stub file for the generator.
