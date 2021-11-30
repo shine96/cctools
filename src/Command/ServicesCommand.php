@@ -33,7 +33,7 @@ class ServicesCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__ . '/../../stubs/service.plain.stub';
+        return __DIR__ . '/../../../stubs/service.plain.stub';
     }
 
     /**

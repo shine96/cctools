@@ -34,7 +34,7 @@ class InterfaceCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__ . '/../../stubs/interface.plain.stub';
+        return __DIR__ . '/../../../stubs/interface.plain.stub';
     }
 
     /**
