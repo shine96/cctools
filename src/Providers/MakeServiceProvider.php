@@ -28,8 +28,8 @@ class MakeServiceProvider extends ServiceProvider
     {
         //
         $this->publishes([
-            __DIR__.'/../Command/ServicesCommand.php' => $this->app->basePath('Console/Commands/ServicesCommand.php'),
-            __DIR__.'/../Command/InterfaceCommand.php' => $this->app->basePath('Console/Commands/InterfaceCommand.php')
+            __DIR__.'/../Command/ServicesCommand.php' => $this->app->basePath('app/Console/Commands/ServicesCommand.php'),
+            __DIR__.'/../Command/InterfaceCommand.php' => $this->app->basePath('app/Console/Commands/InterfaceCommand.php')
         ]);
         $this->publishes([
             __DIR__.'/../../stubs/service.plain.stub' => $this->app->basePath('stubs/service.plain.stub'),
