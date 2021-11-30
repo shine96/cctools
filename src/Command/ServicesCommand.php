@@ -10,7 +10,7 @@ class ServicesCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:interface {name}';
+    protected $signature = 'make:service {name}';
 
     /**
      * The console command description.
@@ -33,7 +33,7 @@ class ServicesCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__ . '/../../stubs/interface.plain.stub';
+        return __DIR__ . '/../../stubs/service.plain.stub';
     }
 
     /**
@@ -44,6 +44,6 @@ class ServicesCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace ( $rootnamespace )
     {
-        return $rootnamespace . '\Interfaces';
+        return $rootnamespace . '\Services';
     }
 }
