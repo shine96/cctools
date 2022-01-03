@@ -14,12 +14,15 @@ class RsaUtil
     public $file_path;
 
 
+    /**
+     * @throws \Exception
+     */
     public function __construct()
     {
         if (!extension_loaded('openssl')){
             $this->_error('请先开启OpenSSL扩展');
         }
-        $this->file_path = base_path().DIRECTORY_SEPARATOR;
+        $this->file_path = base_path() .DIRECTORY_SEPARATOR;
         if (file_exists($this->file_path.'cctools.pem') && file_exists($this->file_path.'cctools.key')){
             $this->pubKeyRes = openssl_pkey_get_public(file_get_contents($this->file_path.'cctools.key'));
             $this->priKeyRes = openssl_pkey_get_private(file_get_contents($this->file_path.'cctools.pem'));
@@ -34,7 +37,7 @@ class RsaUtil
             $res = openssl_pkey_new($this->config);
             openssl_pkey_export($res,$private_key);
             $public_key_default = openssl_pkey_get_details($res);
-            $public_key = isset($public_key_default['key']) ? $public_key_default['key'] : null;
+            $public_key = $public_key_default['key'] ?? null;
             file_put_contents($this->file_path.'cctools.pem',$private_key);
             file_put_contents($this->file_path.'cctools.key',$public_key);
             $data = 'verify';
@@ -117,4 +120,6 @@ class RsaUtil
             $this->_error($exception->getMessage());
         }
     }
+
+
 }

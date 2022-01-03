@@ -20,6 +20,6 @@ class StrUtilServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
+        //Do nothing
     }
 }

@@ -4,6 +4,7 @@
 namespace CCTools\Validator;
 
 use Illuminate\Support\Facades\Validator;
+use ReflectionClass;
 
 class ValidatorTools
 {
@@ -42,9 +43,6 @@ class ValidatorTools
     public function getScenes($scenes) {
         if(is_array($this->scenes) && isset($this->scenes[$scenes])) {
             $this->setRules($this->scenes[$scenes]);
-        }else{
-            # 抛出异常
-            // throw new \Exception('Something went wrong. Time for lunch!');
         }
     }
 
@@ -64,7 +62,6 @@ class ValidatorTools
                 }
             }
         }
-        //$this->rules    = array_only($this->rules, $rules);
     }
 
     /**
@@ -110,8 +107,6 @@ class ValidatorTools
     {
         if(method_exists($this->validator, $name)) {
             return call_user_func_array([$this->validator, $name], $arguments);
-        }else{
-            // throw new \Exception('Something went wrong. Time for lunch!');
         }
     }
 
