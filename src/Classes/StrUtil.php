@@ -6,7 +6,7 @@ namespace CCTools\Classes;
 
 class StrUtil
 {
-    public function randStr($length)
+    public function randStr($length): string
     {
         //字符组合
         $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -20,7 +20,7 @@ class StrUtil
     }
 
 
-    public function desensitize($string, $start = 0, $length = 0, $re = '*')
+    public function desensitize($string, $start = 0, $length = 0, $re = '*') : string
     {
         if (empty($string) || empty($length) || empty($re)) {
             return $string;

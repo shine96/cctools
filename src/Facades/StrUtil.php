@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
 class StrUtil extends Facade
 {
 
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'StrUtil';
     }
