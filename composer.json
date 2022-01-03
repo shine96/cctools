@@ -10,16 +10,24 @@
    "autoload": {
       "psr-4": {
          "CCTools\\": "src/"
+      },
+      "files": [
+         "src/helpers.php"
+      ]
+   },
+   "autoload-dev": {
+      "psr-4": {
+         "CCTools\\Tests\\": "tests/"
       }
    },
    "require": {
-      "php": "^7.2|^8.0",
+      "php": "^7.3|^8.0",
       "illuminate/support": "5.*|6.*|7.*|8.*",
       "ramsey/uuid": "^4.1",
       "kra8/laravel-snowflake": "^2.0"
    },
    "require-dev": {
-      "phpunit/phpunit": "~5.0"
+      "phpunit/phpunit": "^9.5.10"
    },
    "license": "MIT",
    "extra": {
@@ -27,7 +35,8 @@
          "providers": [
             "CCTools\\Providers\\RsaUtilServiceProvider",
             "CCTools\\Providers\\StrUtilServiceProvider",
-            "CCTools\\Providers\\MakeServiceProvider"
+            "CCTools\\Providers\\MakeServiceProvider",
+            "CCTools\\Providers\\MathServiceProvider"
          ],
          "aliases": {
             "RsaUtil": "RsaUtil",

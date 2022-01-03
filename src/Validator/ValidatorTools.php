@@ -3,7 +3,6 @@
 
 namespace CCTools\Validator;
 
-
 use Illuminate\Support\Facades\Validator;
 
 class ValidatorTools

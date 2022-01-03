@@ -18,6 +18,7 @@ trait ApiResponse
         $msg ? $result['msg'] = $msg : $result['msg'] = 'ok';
         $result['code'] = $code;
         $result['data'] = $data;
+        ksort($result);
         return response()->json($result,200,$this->headers);
     }
 
@@ -27,6 +28,7 @@ trait ApiResponse
         $result = [];
         $msg ? $result['msg'] = $msg : $result['msg'] = 'fail';
         $result['code'] = $code;
+        ksort($result);
         return response()->json($result,200,$this->headers);
     }
 }
