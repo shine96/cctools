@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class RsaUtil extends Facade
 {
-    protected static function getFacadeAccessor(): string
+    protected static function getFacadeAccessor()
     {
         return 'RsaUtil';
     }

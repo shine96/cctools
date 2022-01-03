@@ -17,12 +17,12 @@ trait UUIDTrait
         });
     }
 
-    public function getIncrementing(): bool
+    public function getIncrementing()
     {
         return false;
     }
 
-    public function getKeyType(): string
+    public function getKeyType()
     {
         return 'string';
     }
