@@ -20,7 +20,7 @@ class StrUtil
     }
 
 
-    public static function desensitize($string, $start = 0, $length = 0, $re = '*')
+    public function desensitize($string, $start = 0, $length = 0, $re = '*')
     {
         if (empty($string) || empty($length) || empty($re)) {
             return $string;
