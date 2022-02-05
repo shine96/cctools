@@ -42,5 +42,10 @@
             "StrUtil": "StrUtil"
          }
       }
+   },
+   "scripts": {
+      "post-root-package-install": [
+         "@php artisan vendor:publish --provider=\"CCTools\\Providers\\CCToolsServiceProvider\""
+      ]
    }
 }
