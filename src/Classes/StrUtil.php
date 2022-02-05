@@ -9,7 +9,7 @@ class StrUtil
     public function randStr($length)
     {
         //字符组合
-        $str = '#abcdefghilkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $str = 'abcdefghilkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $len = strlen($str) - 1;
         $randStr = '';
         for ($i = 0; $i < $length; $i++) {

@@ -4,9 +4,11 @@
 namespace CCTools\Providers;
 
 
+use CCTools\Classes\RsaUtil;
+use CCTools\Classes\StrUtil;
 use Illuminate\Support\ServiceProvider;
 
-class MakeServiceProvider extends ServiceProvider
+class CCToolsServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -16,7 +18,13 @@ class MakeServiceProvider extends ServiceProvider
     public function register()
     {
         //自动注册
+        $this->app->singleton('RsaUtil',function (){
+            return new RsaUtil();
+        });
 
+        $this->app->singleton('StrUtil',function (){
+            return new StrUtil();
+        });
     }
 
     /**
