@@ -23,7 +23,7 @@ class StrUtilTest extends TestCase
     public function testdesensitize()
     {
         $strUtil = new StrUtil();
-        $str = $strUtil->desensitize('18099990000',3,4,'^');
+        $str = $strUtil->desensitize('18099990000',3,4,'*');
         echo $str;
     }
 }

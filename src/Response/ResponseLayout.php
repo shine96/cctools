@@ -8,7 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 final class ResponseLayout
 {
     protected static $headers = [
-        'X-Author' => 'cctools',
+        'X-Author' => 'ccTools',
     ];
 
     public static function apply($bool = true,$msg = null,$data = array(),$code = 200)
