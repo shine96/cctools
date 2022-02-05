@@ -1,8 +1,6 @@
 <?php
 
-
 namespace CCTools\Traits;
-
 
 trait HasSnowFlakeId
 {
@@ -12,7 +10,7 @@ trait HasSnowFlakeId
             if (is_null($model->getKey())) {
                 $model->setIncrementing(false);
                 $keyName    = $model->getKeyName();
-                $id         = (string)app(\Kra8\Snowflake\Snowflake::class)->next();
+                $id         = app(\Kra8\Snowflake\Snowflake::class)->next();
                 $model->setAttribute($keyName, $id);
             }
         });
@@ -23,8 +21,4 @@ trait HasSnowFlakeId
         return false;
     }
 
-    public function getKeyType()
-    {
-        return 'string';
-    }
 }
