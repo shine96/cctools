@@ -21,7 +21,7 @@
       }
    },
    "require": {
-      "php": "^7.3|^7.4|^8.0",
+      "php": "^7.3|^7.4|^8.0|^8.1",
       "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
       "ramsey/uuid": "^4.1",
       "kra8/laravel-snowflake": "^2.0",
